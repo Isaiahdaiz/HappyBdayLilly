@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Happy Birthday ❤️</title>
-    
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css" />
-    </head>    
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday ❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
     <canvas id="heartCanvas"></canvas>
 
     <div class="container">
-        <h1 class="title">Happy Birthday, My Love ❤️</h1>
-        <h2 class="subtitle">To the most amazing girl in the world</h2>
 
-        <button id="revealBtn" class="btn">Click for a Surprise 🎁</button>
-        <p id="message" class="hidden">
-            Every day with you is magic.<br>
-            Thank you for being the most beautiful part of my life.  
-            I love you more than you could ever imagine. ❤️
-        </p>
+        <!-- STEP 1: OPEN GIFT -->
+        <div id="step1" class="step active">
+            <h1 class="title">Happy Birthday, My Love ❤️</h1>
+            <p class="subtitle">I have a surprise for you...</p>
+
+            <div id="giftBox" class="clickable-gift">
+                🎁
+            </div>            
+
+            <div id="giftReveal" class="hidden">
+                <img id="giftImage" src="YOUR_IMAGE.jpg" alt="Gift Image">
+                <p id="giftLabel">You're my greatest gift. ❤️</p>
+                <button id="toStep2" class="btn">Next ➜</button>
+            </div>
+        </div>
+
+        <!-- STEP 2: GOOGLE MAPS -->
+        <div id="step2" class="step hidden">
+            <h1 class="title">Your Next Surprise 🎉</h1>
+            <p class="subtitle">Follow this location...</p>
+
+            <iframe
+                width="100%"
+                height="350"
+                style="border:0; border-radius: 10px;"
+                loading="lazy"
+                allowfullscreen
+                src="https://www.google.com/maps?q=154%20Cumberland%20St%202nd%20floor,%20Toronto,%20ON%20M5R%201A8&output=embed">
+            </iframe>
+
+            <button id="toStep3" class="btn">Last Surprise ➜</button>
+        </div>
+
+        <!-- STEP 3: LOVE LETTER -->
+        <div id="step3" class="step hidden">
+            <h1 class="title">I Love You ❤️</h1>
+            <p class="love-letter">
+                My love,  
+                <br><br>
+                You are the most beautiful part of every day.  
+                Thank you for your kindness, your strength, your smile,  
+                and the way you make my world brighter without even trying.  
+                <br><br>
+                I am endlessly grateful for you.  
+                I love you more deeply than words could ever describe.  
+                <br><br>
+                ❤️ Forever yours.
+            </p>
+        </div>
+
     </div>
 
     <script src="script.js"></script>

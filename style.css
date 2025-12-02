@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     margin: 0;
     overflow: hidden;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(120deg, #ff9a9e, #fecfef);
-    position: relative;
 }
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.clickable-gift {
+    font-size: 5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clickable-gift:hover {
+    transform: scale(1.15);
+}
+
 
 .container {
     position: fixed;
@@ -12,24 +32,20 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(255, 112, 112);
-    z-index: 10;
+    color: rgb(247, 144, 144);
     width: 100%;
     max-width: 600px;
     padding: 0 20px;
+    z-index: 10;
 }
 
-
-
-.title, .subtitle, #message {
-    font-family: 'Poppins', sans-serif !important;
+.title {
+    font-size: 2.4rem;
 }
-
 
 .subtitle {
-    font-size: 1.5rem;
-    opacity: 0;
-    animation: fadeIn 3s ease forwards 1s;
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
 .btn {
@@ -42,37 +58,31 @@ body {
     color: #ff6b81;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
-.btn:hover {
-    transform: scale(1.1);
+#giftBox {
+    font-size: 4.5rem;
+    margin: 20px 0;
 }
 
-#message {
-    margin-top: 25px;
-    font-size: 1.3rem;
-    line-height: 1.6;
-    opacity: 0;
-    transition: opacity 1s ease;
+#g  iftImage {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.love-letter {
+    font-size: 1.2rem;
+    line-height: 1.7;
 }
 
 .hidden {
     display: none;
 }
 
-/* Floating hearts animation background */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 0;
+.step {
+    display: none;
 }
-
-
-/* Keyframes */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+.step.active {
+    display: block;
 }
