@@ -62,11 +62,14 @@ const step1 = document.getElementById("step1");
 const step2 = document.getElementById("step2");
 const step3 = document.getElementById("step3");
 
-document.getElementById("giftBox").onclick = () => {
-    document.getElementById("giftReveal").classList.remove("hidden");
+document.getElementById("giftBox").addEventListener("click", function() {
+    const giftReveal = document.getElementById("giftReveal");
+
+    giftReveal.classList.remove("hidden");
     document.getElementById("giftBox").style.opacity = "0.3";
     document.getElementById("giftBox").style.pointerEvents = "none";
-};
+});
+
 
 document.getElementById("toStep2").onclick = () => {
     step1.classList.remove("active");
