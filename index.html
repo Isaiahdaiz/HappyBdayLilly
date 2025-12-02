@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday ❤️</title>
 
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-</head>
 
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+    <!-- HEART BACKGROUND CANVAS -->
     <canvas id="heartCanvas"></canvas>
 
     <div class="container">
 
-        <!-- STEP 1: OPEN GIFT -->
+        <!-- STEP 1: OPEN THE GIFT -->
         <div id="step1" class="step active">
             <h1 class="title">Happy Birthday, My Love ❤️</h1>
             <p class="subtitle">I have a surprise for you...</p>
 
-            <div id="giftBox" class="clickable-gift">
-                🎁
-            </div>            
+            <!-- Gift Button -->
+            <div id="giftBox" class="clickable-gift">🎁</div>
 
+            <!-- Gift Reveal -->
             <div id="giftReveal" class="hidden">
-                <img id="giftImage" src="YOUR_IMAGE.jpg" alt="Gift Image">
+                <img id="giftImage" src="images/yourGift.jpg" alt="Gift Image">
                 <p id="giftLabel">You're my greatest gift. ❤️</p>
                 <button id="toStep2" class="btn">Next ➜</button>
             </div>
         </div>
 
-        <!-- STEP 2: GOOGLE MAPS -->
+        <!-- STEP 2: LOCATION & MAP -->
         <div id="step2" class="step hidden">
             <h1 class="title">Your Next Surprise 🎉</h1>
-            <p class="subtitle">Follow this location...</p>
+            <p class="subtitle">For my sushi lover, come here to satisfy your yearn for the sea 🍣</p>
+            <p class="subtitle">MSSM Yorkville</p>
 
-            <iframe
-                width="100%"
-                height="350"
-                style="border:0; border-radius: 10px;"
-                loading="lazy"
-                allowfullscreen
-                src="https://www.google.com/maps?q=154%20Cumberland%20St%202nd%20floor,%20Toronto,%20ON%20M5R%201A8&output=embed">
-            </iframe>
+            <div class="map-container">
+                <iframe
+                    id="mapCard"
+                    class="map-card-animate"
+                    width="100%"
+                    height="350"
+                    style="border:0; border-radius: 15px;"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.3498038056296!2d-79.39532122349899!3d43.67043187110265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b0876d3063%3A0xfaacb7cd50b3a4ab!2s154%20Cumberland%20St%202nd%20floor%2C%20Toronto%2C%20ON%20M5R%201A8!5e0!3m2!1sen!2sca!4v1700000000000">
+                </iframe>
+                <div class="pin">📍</div>
+            </div>
 
-            <button id="toStep3" class="btn">Last Surprise ➜</button>
+            <button id="toStep3" class="btn" style="margin-top: 20px;">Last Surprise ➜</button>
         </div>
 
-        <!-- STEP 3: LOVE LETTER -->
+        <!-- STEP 3: LOVE LETTER WITH KISSING FACES -->
         <div id="step3" class="step hidden">
             <h1 class="title">I Love You ❤️</h1>
+
+            <!-- Floating Hearts Container -->
+            <div class="hearts-container"></div>
+
+            <!-- Kissing Faces -->
+            <div class="love-container">
+                <img id="yourFace" src="images/iHead.jpg" alt="Me" class="face-image">
+                <img id="herFace" src="images/lHead.png" alt="You" class="face-image">
+            </div>
+
+            <!-- Love Letter Text -->
             <p class="love-letter">
-                My love,  
-                <br><br>
+                My love,<br><br>
                 You are the most beautiful part of every day.  
                 Thank you for your kindness, your strength, your smile,  
                 and the way you make my world brighter without even trying.  
@@ -66,6 +86,7 @@
 
     </div>
 
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
