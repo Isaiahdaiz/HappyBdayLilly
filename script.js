@@ -1,0 +1,67 @@
+// Heart animation background
+const canvas = document.getElementById("heartCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const hearts = [];
+
+function Heart() {
+    this.x = Math.random() * canvas.width;
+    this.y = canvas.height + Math.random() * 100;
+    this.size = Math.random() * 8 + 4;
+    this.speed = Math.random() * 1 + 0.5;
+    this.alpha = Math.random() * 0.5 + 0.5;
+}
+
+Heart.prototype.draw = function () {
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.fillStyle = "pink";
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    ctx.bezierCurveTo(
+        this.x - this.size, this.y - this.size,
+        this.x - this.size * 2, this.y + this.size,
+        this.x, this.y + this.size * 2
+    );
+    ctx.bezierCurveTo(
+        this.x + this.size * 2, this.y + this.size,
+        this.x + this.size, this.y - this.size,
+        this.x, this.y
+    );
+    ctx.fill();
+    ctx.restore();
+};
+
+Heart.prototype.update = function () {
+    this.y -= this.speed;
+    if (this.y < -10) {
+        this.y = canvas.height + 10;
+        this.x = Math.random() * canvas.width;
+    }
+};
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (hearts.length < 80) hearts.push(new Heart());
+
+    hearts.forEach((heart) => {
+        heart.update();
+        heart.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+animate();
+
+// Button reveal
+const btn = document.getElementById("revealBtn");
+const message = document.getElementById("message");
+
+btn.addEventListener("click", () => {
+    message.classList.remove("hidden");
+    setTimeout(() => message.style.opacity = 1, 50);
+    btn.style.display = "none";
+});
