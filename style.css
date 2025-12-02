@@ -34,15 +34,8 @@ canvas {
     z-index: 10;
 }
 
-.title {
-    font-size: 2.4rem;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
+.title { font-size: 2.4rem; }
+.subtitle { font-size: 1.2rem; opacity: 0.9; }
 .btn {
     margin-top: 20px;
     padding: 12px 25px;
@@ -54,18 +47,9 @@ canvas {
     font-weight: bold;
     cursor: pointer;
 }
-
-.hidden {
-    display: none;
-}
-
-.step {
-    display: none;
-}
-
-.step.active {
-    display: block;
-}
+.hidden { display: none; }
+.step { display: none; }
+.step.active { display: block; }
 
 /* ============================== */
 /*       GIFT STYLES              */
@@ -76,67 +60,26 @@ canvas {
     transition: transform 0.2s;
     display: inline-block;
 }
+.clickable-gift:hover { transform: scale(1.15); }
 
-.clickable-gift:hover {
-    transform: scale(1.15);
-}
-
-#giftBox {
-    font-size: 4.5rem;
-    margin: 20px 0;
-    position: relative;
-    z-index: 9999 !important;
-}
-
-#giftImage {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
+#giftBox { font-size: 4.5rem; margin: 20px 0; z-index: 9999 !important; }
+#giftImage { width: 100%; border-radius: 10px; margin-top: 10px; }
 
 /* ============================== */
 /*       LOCATION STEP            */
 /* ============================== */
-#step2 {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-#step2.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.map-card-animate {
-    opacity: 0;
-    transform: scale(0.85);
-    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
-}
-.map-card-animate.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.pin {
-    font-size: 2rem;
-    opacity: 0;
-    animation: pinDrop 0.9s forwards ease-out;
-    animation-delay: 0.9s;
-}
-
+#step2 { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+#step2.active { opacity: 1; transform: translateY(0); }
+.map-card-animate { opacity: 0; transform: scale(0.85); transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s; }
+.map-card-animate.show { opacity: 1; transform: scale(1); }
+.pin { font-size: 2rem; opacity: 0; animation: pinDrop 0.9s forwards ease-out; animation-delay: 0.9s; }
 @keyframes pinDrop {
     0% { transform: translateY(-40px) scale(0.7); opacity: 0; }
     60% { transform: translateY(10px) scale(1.1); opacity: 1; }
     100% { transform: translateY(0) scale(1); }
 }
-
-#step2 .subtitle {
-    opacity: 0;
-    transition: opacity 0.7s ease 1s;
-}
-#step2.active .subtitle {
-    opacity: 1;
-}
+#step2 .subtitle { opacity: 0; transition: opacity 0.7s ease 1s; }
+#step2.active .subtitle { opacity: 1; }
 
 /* ============================== */
 /*       LOVE LETTER / FACES      */
@@ -145,78 +88,25 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* spacing between faces */
+    gap: 20px;
     margin-top: 20px;
 }
+.face-image { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid white; flex-shrink: 0; }
+.flower-emoji { font-size: 2rem; animation: floatFlower 2s ease-in-out infinite alternate; }
 
-.face-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-    flex-shrink: 0;
-}
+#yourFace { animation: floatUpDown 3s ease-in-out infinite alternate; }
+#herFace { animation: floatUpDown 4s ease-in-out infinite alternate-reverse; }
 
-.flower-emoji {
-    font-size: 2rem; /* size of the flower */
-    animation: floatFlower 2s ease-in-out infinite alternate;
-}
+@keyframes floatUpDown { 0% {transform: translateY(0);} 50% {transform: translateY(-10px);} 100% {transform: translateY(0);} }
+@keyframes floatFlower { 0% {transform: translateY(0);} 50% {transform: translateY(-8px);} 100% {transform: translateY(0);} }
 
-/* Your face floats up first */
-#yourFace {
-    animation: floatUpDown 3s ease-in-out infinite alternate;
-}
-
-/* Her face floats down first (opposite phase) */
-#herFace {
-    animation: floatUpDown 4s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes floatFlower {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes floatUpDown {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Love letter styling */
-.love-letter {
-    margin-top: 30px;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    text-align: center;
-}
-
+.love-letter { margin-top: 30px; font-size: 1.2rem; line-height: 1.7; text-align: center; }
 
 /* ============================== */
 /*       FLOATING HEARTS          */
 /* ============================== */
-.hearts-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 150px;
-    pointer-events: none;
-    overflow: visible;
-    transform: translateX(-50%);
-    z-index: 20;
-}
-
-.heart {
-    position: absolute;
-    font-size: 20px;
-    color: #ff4d6d;
-    opacity: 0;
-    animation: floatHeart 3s ease-out forwards;
-}
-
+.hearts-container { position: absolute; top: 0; left: 50%; width: 100%; height: 150px; pointer-events: none; overflow: visible; transform: translateX(-50%); z-index: 20; }
+.heart { position: absolute; font-size: 20px; color: #ff4d6d; opacity: 0; animation: floatHeart 3s ease-out forwards; }
 @keyframes floatHeart {
     0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
     50% { transform: translate(calc(-10px + 20px * var(--drift)), -50px) scale(1); opacity: 1; }
@@ -233,33 +123,14 @@ canvas {
     .clickable-gift { font-size: 4rem; }
     #giftImage { max-height: 250px; border-radius: 12px; }
     iframe { height: 250px !important; border-radius: 10px; }
-
     .face-image { width: 100px; height: 100px; }
     .love-container { gap: 15px; }
-    @keyframes kissYourFace {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(calc(50px + 3px)); }
-    }
-    @keyframes kissHerFace {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(calc(-50px - 3px)); }
-    }
-
     .love-letter { font-size: 1rem; line-height: 1.5; padding: 0 10px; }
     .btn { width: 100%; font-size: 1rem; padding: 10px 0; }
 }
-
 @media (max-width: 380px) {
     .title { font-size: 1.6rem; }
     .clickable-gift { font-size: 3.2rem; }
     .face-image { width: 80px; height: 80px; }
     .love-container { gap: 10px; }
-    @keyframes kissYourFace {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(calc(40px + 2px)); }
-    }
-    @keyframes kissHerFace {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(calc(-40px - 2px)); }
-    }
 }
