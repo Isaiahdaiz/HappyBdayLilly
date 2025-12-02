@@ -158,6 +158,11 @@ canvas {
     flex-shrink: 0;
 }
 
+.flower-emoji {
+    font-size: 2rem; /* size of the flower */
+    animation: floatFlower 2s ease-in-out infinite alternate;
+}
+
 /* Your face floats up first */
 #yourFace {
     animation: floatUpDown 3s ease-in-out infinite alternate;
@@ -166,6 +171,12 @@ canvas {
 /* Her face floats down first (opposite phase) */
 #herFace {
     animation: floatUpDown 4s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatFlower {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
 }
 
 @keyframes floatUpDown {
