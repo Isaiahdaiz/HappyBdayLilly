@@ -153,6 +153,29 @@ function triggerKissHearts() {
 }
 
 /* ============================= */
+/*      PLAY AGAIN BUTTON        */
+/* ============================= */
+const playAgain = document.getElementById("playAgain");
+
+playAgain.addEventListener("click", () => {
+    // Hide Step 3
+    step3.classList.remove("active");
+    step3.classList.add("hidden");
+
+    // Reset Step 1
+    giftBox.style.opacity = "1";
+    giftBox.style.pointerEvents = "auto";
+    giftReveal.classList.add("hidden");
+
+    step1.classList.remove("hidden");
+    step1.classList.add("active");
+
+    // Optional: reset hearts container
+    const heartsContainer = document.querySelector(".hearts-container");
+    heartsContainer.innerHTML = "";
+});
+
+/* ============================= */
 /*        WINDOW RESIZE           */
 /* ============================= */
 window.addEventListener("resize", () => {
