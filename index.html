@@ -16,6 +16,7 @@
     <canvas id="heartCanvas"></canvas>
 
     <div class="container">
+        <audio id="sound" src="sounds/bday.m4a" controls loop></audio>
 
         <!-- STEP 1: OPEN THE GIFT -->
         <div id="step1" class="step active">
@@ -23,12 +24,13 @@
             <p class="subtitle">I have a surprise for you...</p>
 
             <!-- Gift Button -->
-            <div id="giftBox" class="clickable-gift">🎁</div>
-
+            <div id="giftWrapper">
+                <div id="giftBox" class="clickable-gift">🎁</div>
+            </div> 
             <!-- Gift Reveal -->
             <div id="giftReveal" class="hidden">
                 <img id="giftImage" src="images/gift.jpeg" alt="Gift Image">
-                <p id="giftLabel">You're my greatest gift. ❤️</p>
+                <p id="giftLabel">Something to wrap around your neck. ❤️</p>
                 <button id="toStep2" class="btn">Next ➜</button>
             </div>
         </div>
@@ -73,15 +75,17 @@
 
             <!-- Love Letter Text -->
             <p class="love-letter">
-                My love,<br><br>
-                You are the most beautiful part of every day.  
-                Thank you for your kindness, your strength, your smile,  
-                and the way you make my world brighter without even trying.  
+                Dear Lilly,<br><br>
+                Today is your very special day you can call yours.
+                You are such an amazing part of my life and I feel so grateful to be a part of yours.
+            
                 <br><br>
-                I am endlessly grateful for you.  
-                I love you more deeply than words could ever describe.  
+                I love you so much!
+                I hope I was able to make your day feel special.
                 <br><br>
-                ❤️ Forever yours.
+                ❤️ Love, Isaiah (Bebeh).
+                <br><br>
+                PS. Are you enjoying the melody?
             </p>
 
             <!-- Play Again Button -->

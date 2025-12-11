@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const giftReveal = document.getElementById("giftReveal");
     const playAgain = document.getElementById("playAgain");
     const heartsContainer = document.querySelector(".hearts-container");
+    const audio = document.getElementById("mySound");
 
     /* ============================= */
     /*       HEART BACKGROUND        */
@@ -39,6 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animateHearts);
     }
     animateHearts();
+
+    /* ============================= */
+    /*       AUDIO LOOP              */
+    /* ============================= */
+    document.body.addEventListener("click", function playOnce() {
+        audio.play().catch(e => console.log("Audio play failed:", e));
+        document.body.removeEventListener("click", playOnce);
+    });
+    
 
     /* ============================= */
     /*       STEP NAVIGATION         */
@@ -104,11 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
         giftReveal.classList.add("hidden");
         step1.classList.replace("hidden", "active");
         heartsContainer.innerHTML = "";
-        
     });
 
     /* ============================= */
     /*        WINDOW RESIZE           */
     /* ============================= */
     window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
 });
