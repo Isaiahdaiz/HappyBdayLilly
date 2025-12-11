@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ============================= */
     giftBox.addEventListener("click", () => {
         giftReveal.classList.remove("hidden");
+        giftBox.style.display = "none";
         giftBox.style.opacity = "0.3";
         giftBox.style.pointerEvents = "none";
     });
@@ -97,11 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ============================= */
     playAgain.addEventListener("click", () => {
         step3.classList.replace("active", "hidden");
+        giftBox.style.display = "block";
         giftBox.style.opacity = "1";
         giftBox.style.pointerEvents = "auto";
         giftReveal.classList.add("hidden");
         step1.classList.replace("hidden", "active");
         heartsContainer.innerHTML = "";
+        
     });
 
     /* ============================= */
