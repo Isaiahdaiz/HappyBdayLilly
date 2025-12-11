@@ -21,6 +21,11 @@ canvas {
     z-index: 0;
 }
 
+.gift-wrapper {
+    width: 100%;
+    max-width: 300px;  /* adjust to desired size */
+    margin: 0 auto;
+}
 #giftImage {
     width: 100%;
     max-width: 350px;     /* Limits how wide it can look on GitHub Pages */
